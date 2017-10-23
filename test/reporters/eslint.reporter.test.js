@@ -55,7 +55,6 @@ module.exports = () => {
 
         reporter.launch(() => {
           let result = readJSONFile(esLintMock.defaultOptions.report);
-
           result.files[0].issues.length.should.be.equal(1);
           result.files[0].issues.forEach((issue) => {
             issue.rulekey.should.be.oneOf(expected);
